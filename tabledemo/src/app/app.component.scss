@@ -4,7 +4,13 @@
 
     .scroll-table-body {
         height: 500px;
-        overflow-y: auto;
+        overflow-y: scroll;
+    }
+    .scroll-table-header {
+        width:calc( 100% - 17px );
+    }
+    .scroll-table-footer {
+        width:calc( 100% - 17px );
     }
     .table{
         margin-bottom: 0;

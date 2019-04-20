@@ -10,6 +10,7 @@ export class AppComponent {
   name = 'Angular';
   rows=[];
   constructor(){
+    window["$"] = $;
     this.rows = this.gerRows();
   }
   makeid(length) {
@@ -40,16 +41,44 @@ export class AppComponent {
     return Math.ceil(Math.floor(Math.random() * 20));
   }
   ngAfterViewInit(){
-    console.log($)
+    this.tableWidth();
+    $(window).resize(()=>{
+      this.tableWidth();
+    });
+  }
+  tableWidth(){
     let $head = $('.scroll-table-header table tr:first');
     let $body = $('.scroll-table-body table tr:first');
     let $foot = $('.scroll-table-footer table');
     let headerCells = $head.find('th');
     $body.find('td').each((index,item)=>{
-      console.log(index,item,$(item).width(),$(headerCells[index]).width
-      ($(item).width()));
-      $(headerCells[index]).find('div').width($(item).width())
+      console.log(headerCells[index],item,$(item).width());
+      $(headerCells[index]).width($(item).width()-1);
+      //$(headerCells[index]).find('div').width($(item).width()-26)
     })
-    console.log('mantu',$head,$body)
   }
+  getScrollbarWidth() {
+    var outer = document.createElement("div");
+    outer.style.visibility = "hidden";
+    outer.style.width = "100px";
+    outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+    document.body.appendChild(outer);
+
+    var widthNoScroll = outer.offsetWidth;
+    // force scrollbars
+    outer.style.overflow = "scroll";
+
+    // add innerdiv
+    var inner = document.createElement("div");
+    inner.style.width = "100%";
+    outer.appendChild(inner);        
+
+    var widthWithScroll = inner.offsetWidth;
+
+    // remove divs
+    outer.parentNode.removeChild(outer);
+
+    return widthNoScroll - widthWithScroll;
+}
 }
