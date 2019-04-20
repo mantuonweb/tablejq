@@ -17,6 +17,10 @@
         margin-bottom: 0;
     }
     td,th{
-        border: 1px solid #ccc
+        border: 1px solid #ccc;
+        max-width: 50px;
+        white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
     }
 }
