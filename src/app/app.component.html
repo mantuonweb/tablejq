@@ -3,11 +3,11 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th><div>Name</div></th>
-					<th><div>Std</div></th>
+					<th *ngFor = "let col of columns"><div>{{col.displayName}}</div></th>
+					<!-- <th><div>Std</div></th>
 					<th><div>Age</div></th>
 					<th><div>YearLOngTextMayGoThereButDontWorryTruncated</div></th>
-					<th><div>Section</div></th>
+					<th><div>Section</div></th> -->
 				</tr>
 			</thead>
 		</table>
@@ -17,11 +17,11 @@
 
 			<tbody>
 				<tr *ngFor="let row of rows">
-					<td>{{row.name}}</td>
-					<td>{{row.std}}</td>
+					<td *ngFor = "let col of columns" [width]="col.width" [ngStyle]="{width: col.width}">{{row[col.name]}}</td>
+					<!-- <td>{{row.std}}</td>
 					<td>{{row.age}}</td>
 					<td>{{row.year}}</td>
-					<td>{{row.section}}</td>
+					<td>{{row.section}}</td> -->
 				</tr>
 
 			</tbody>

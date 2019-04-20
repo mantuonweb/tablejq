@@ -9,6 +9,13 @@ import * as $ from 'jquery';
 export class AppComponent {
   name = 'Angular';
   rows=[];
+  columns = [
+    {name:'name',displayName:'Name',width:'10%'},
+    {name:'age',displayName:'Age',width:'30%'},
+    {name:'std',displayName:'Standard',width:'20%'},
+    {name:'year',displayName:'Year',width:'15%'},
+    {name:'section',displayName:'Section',width:'25%'}
+]
   constructor(){
     window["$"] = $;
     this.rows = this.gerRows();
@@ -38,7 +45,7 @@ export class AppComponent {
     return rows;
   }
   getNumber(){
-    return Math.ceil(Math.floor(Math.random() * 20));
+    return Math.ceil(Math.floor(Math.random() * 50));
   }
   ngAfterViewInit(){
     this.tableWidth();
