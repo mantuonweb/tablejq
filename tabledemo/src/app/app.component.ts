@@ -50,6 +50,8 @@ export class AppComponent {
     let $head = $('.scroll-table-header table tr:first');
     let $body = $('.scroll-table-body table tr:first');
     let $foot = $('.scroll-table-footer table');
+    $('.scroll-table-header table').width($('.scroll-table-body table').width());
+    $('.scroll-table-footer table').width($('.scroll-table-body table').width())
     let headerCells = $head.find('th');
     $body.find('td').each((index,item)=>{
       console.log(headerCells[index],item,$(item).width());
