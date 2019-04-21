@@ -3,7 +3,7 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th *ngFor = "let col of columns"><div>{{col.displayName}}</div></th>
+					<th *ngFor = "let col of columns" [width]="col.width" [ngStyle]="{width: col.width}"><div>{{col.displayName}}</div></th>
 					<!-- <th><div>Std</div></th>
 					<th><div>Age</div></th>
 					<th><div>YearLOngTextMayGoThereButDontWorryTruncated</div></th>

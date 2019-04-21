@@ -13,8 +13,8 @@ export class AppComponent {
     {name:'name',displayName:'Name',width:'10%'},
     {name:'age',displayName:'Age',width:'30%'},
     {name:'std',displayName:'Standard',width:'20%'},
-    {name:'year',displayName:'Year',width:'15%'},
-    {name:'section',displayName:'Section',width:'25%'}
+    {name:'year',displayName:'Year',width:'20%'},
+    {name:'section',displayName:'Section',width:'20%'}
 ]
   constructor(){
     window["$"] = $;
@@ -54,17 +54,17 @@ export class AppComponent {
     });
   }
   tableWidth(){
-    let $head = $('.scroll-table-header table tr:first');
-    let $body = $('.scroll-table-body table tr:first');
-    let $foot = $('.scroll-table-footer table');
-    $('.scroll-table-header table').width($('.scroll-table-body table').width());
-    $('.scroll-table-footer table').width($('.scroll-table-body table').width())
-    let headerCells = $head.find('th');
-    $body.find('td').each((index,item)=>{
-      console.log(headerCells[index],item,$(item).width());
-      $(headerCells[index]).width($(item).width()-1);
-      //$(headerCells[index]).find('div').width($(item).width()-26)
-    })
+    // let $head = $('.scroll-table-header table tr:first');
+    // let $body = $('.scroll-table-body table tr:first');
+    // let $foot = $('.scroll-table-footer table');
+    // $('.scroll-table-header table').width($('.scroll-table-body table').width());
+    // $('.scroll-table-footer table').width($('.scroll-table-body table').width())
+    // let headerCells = $head.find('th');
+    // $body.find('td').each((index,item)=>{
+    //   console.log(headerCells[index],item,$(item).width());
+    //   $(headerCells[index]).width($(item).width()-1);
+    //   //$(headerCells[index]).find('div').width($(item).width()-26)
+    // })
   }
   getScrollbarWidth() {
     var outer = document.createElement("div");
