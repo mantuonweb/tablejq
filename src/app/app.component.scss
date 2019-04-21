@@ -19,7 +19,18 @@
     .table {
         margin-bottom: 0;
     }
-
+    label{
+        border:0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .table-control{
+        width:100%;
+        label{
+            width:100%;
+        }
+    }
     td,
     th,th {
         border: 1px solid #ccc;
@@ -27,7 +38,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        div{
+        div,label{
             border:0;
             white-space: nowrap;
             overflow: hidden;
