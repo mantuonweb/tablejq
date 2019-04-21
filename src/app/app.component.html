@@ -18,11 +18,15 @@
 			<tbody>
 				<tr *ngFor="let row of rows">
 					<td *ngFor = "let col of columns" [width]="col.width" [ngStyle]="{width: col.width}">
-						<button class="btn btn-primary table-control">
+						<!-- <button class="btn btn-primary table-control">
 							<label>
 									{{row[col.name]}}
 							</label>
-						</button>
+						</button> -->
+						<!-- <label>
+								{{row[col.name]}}
+						</label> -->
+						{{row[col.name]}}
 					</td>
 					<!-- <td>{{row.std}}</td>
 					<td>{{row.age}}</td>

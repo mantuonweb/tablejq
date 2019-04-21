@@ -6,14 +6,18 @@
         height: 500px;
         width: 100%;
         overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     .scroll-table-header {
+        overflow-x: hidden;
         width: calc(100% - 17px);
     }
 
     .scroll-table-footer {
-        width: calc(100% - 17px);
+        // width: calc(100% - 17px);
+        overflow-y: hidden;
+        overflow-x:auto;
     }
 
     .table {

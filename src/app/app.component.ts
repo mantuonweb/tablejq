@@ -11,10 +11,14 @@ export class AppComponent {
   rows=[];
   columns = [
     {name:'name',displayName:'Name',width:'10%'},
-    {name:'age',displayName:'Age',width:'30%'},
-    {name:'std',displayName:'Standard',width:'20%'},
+    {name:'age',displayName:'Age',width:'10%'},
+    {name:'std',displayName:'Standard',width:'10%'},
     {name:'year',displayName:'Year',width:'20%'},
-    {name:'section',displayName:'Section',width:'20%'}
+    {name:'name',displayName:'Name',width:'10%'},
+    {name:'age',displayName:'Age',width:'10%'},
+    {name:'std',displayName:'Standard',width:'10%'},
+    {name:'year',displayName:'Year',width:'10%'},
+    {name:'section',displayName:'Section',width:'10%'}
 ]
   constructor(){
     window["$"] = $;
@@ -65,6 +69,15 @@ export class AppComponent {
     //   $(headerCells[index]).width($(item).width()-1);
     //   //$(headerCells[index]).find('div').width($(item).width()-26)
     // })
+    $('.scroll-table-footer table').width($('.scroll-table-body table').width());
+    $('.scroll-table-footer').on('scroll',(event)=>{
+      console.log('scrolled',event);
+      let barwidth=this.getScrollbarWidth();
+      let pos =  $('.scroll-table-footer').scrollLeft() + ($('.scroll-table-footer').scrollLeft()>barwidth?barwidth:0)
+
+      $( ".scroll-table-header" ).scrollLeft( pos);
+      $( ".scroll-table-body" ).scrollLeft( pos );
+    });
   }
   getScrollbarWidth() {
     var outer = document.createElement("div");
